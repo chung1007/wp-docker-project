@@ -1,5 +1,5 @@
 #!/bin/bash
 
 sudo systemctl status docker
-sudo docker ps
+sudo docker ps -a
 

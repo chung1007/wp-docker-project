@@ -3,13 +3,11 @@
 	$myPassword = 'password';
 	$myDBName = 'wordpress';
 	$myHost = 'mysql';
-	echo "<script>console.log('mysql init');</script>";
 	$db = new mysqli($myHost, $myUserName, $myPassword, $myDBName);
-	echo "<script>console.log('db connecting..');</script>";
 	if ($db->connect_error) {
 		die('Cannot connect to the database: ' . $db->connect_error);
 	}
-	echo "Connected successfully";
+	echo "<script>console.log('Connected successfully');</script>";
 
 	function getDB()
 	{
@@ -19,22 +17,22 @@
 
 	function getLogin ($login, $password)
 	{
-		echo "<script>console.log('getLogin called!');</script>";
 		global $db;
-		$result = mysql_query("SELECT id FROM users WHERE password = SHA1('" . $password . "') and login = '" . $login . "'");
-		if (!result) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message .= 'Whole query: ' . $query;
-			die($message);
+		$result = $db->query("SELECT id FROM users WHERE password = SHA1('" . $password . "') and login = '" . $login . "'");
+		if (!$result) {
+			echo "<script>console.log('Login Unsuccessful.');</script>";
+			$message  = "Invalid Login\n";
+			echo $message;
 		}
 		else {
+			echo "<script>console.log('Login Successful.');</script>";
 			$row = array();
-			$row = mysql_fetch_array($result);
+			$row = mysqli_fetch_array($result);
 			if (!empty($row)) {
 				return $row;
 			}
 		}
-		mysql_free_result($result);
+		mysqli_free_result($result);
 		return false;
 	}
 ?>

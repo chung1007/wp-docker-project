@@ -15,7 +15,7 @@
 			<title> HELLO WORLD!</title>
 		</head>
 		<body>
-			<center><h1>Vintage watches rock!</h1></center>
+			<center><h1>Welcome to the main page :)</h1></center>
 		</body>
 	</html>';}
 ?>
