@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	require_once("db_auth.php");
 	$access = getLogin($_POST['login'], $_POST['password']);
 	if ($access != false)

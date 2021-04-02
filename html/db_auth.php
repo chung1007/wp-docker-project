@@ -28,11 +28,10 @@
 		
 		$result = $db->query("SELECT * FROM wp_users WHERE user_login = '$login' AND user_pass = MD5('$password')");
 		if ($result){
-			echo "<script>console.log('got result.');</script>";
 			$row = $result->fetch_array(MYSQLI_NUM);
 			if($row[1] && $row[2]){
 				echo "<script>console.log('Login success');</script>";
-				return true
+				return true;
 			}
 		}
 		return false;
