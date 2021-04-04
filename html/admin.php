@@ -7,9 +7,8 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/global.6.css" /> -->
 	</head>
 	<body>
-		<script> console.log("we are in admin.php!"); </script>
-		<h2> Sign in</h2>
-		<form method="post" action="login.php">
+		<h2> Admin Sign in</h2>
+		<form method="post" action="admin_login.php">
 			<label for="login">Username:</label><br> 
 			<input type="text" name="login" size="15" maxlength="15" required><br><br>
 			<label for="password">Password:</label><br> 

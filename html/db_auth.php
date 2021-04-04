@@ -15,7 +15,7 @@
 		return $db;
 	}
 
-	function getLogin ($login, $password)
+	function getLogin ($login, $password, $table)
 	{
 		global $db;
 		echo "<script>console.log('LOGIN: $login');</script>";
@@ -26,7 +26,7 @@
 		$default = $row[0];
 		echo "<script>console.log('Default DB: $default');</script>";
 		
-		$result = $db->query("SELECT * FROM wp_users WHERE user_login = '$login' AND user_pass = MD5('$password')");
+		$result = $db->query("SELECT * FROM $table WHERE user_login = '$login' AND user_pass = MD5('$password')");
 		if ($result){
 			$row = $result->fetch_array(MYSQLI_NUM);
 			if($row[1] && $row[2]){
