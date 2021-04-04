@@ -7,7 +7,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/global.6.css" /> -->
 	</head>
 	<body>
-		<h2> Admin Sign in</h2>
+		<h2> Sign in as Admin</h2>
 		<form method="post" action="admin_login.php">
 			<label for="login">Username:</label><br> 
 			<input type="text" name="login" size="15" maxlength="15" required><br><br>

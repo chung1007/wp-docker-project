@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if ($_SESSION['login'] == null)
+	{
+		header("Location: admin.php");
+		exit;
+	}
+	if ($_COOKIE['wp_admins_access'] == "granted") {
+			echo '
 <html>
 	<head>
 		<title> Welcome </title>
@@ -13,5 +22,15 @@
 			<input type="date" id="bdate" name="bdate" required><br><br>
 			<input type="submit" value="Search">
 	</body>
-</html>
+</html>';} 
+		else {
+			echo '
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Forbidden</h1></center>
+<hr><center>Unauthorized Access</center>
+</body>
+</html>';}
+?>
 

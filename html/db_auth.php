@@ -31,6 +31,7 @@
 			$row = $result->fetch_array(MYSQLI_NUM);
 			if($row[1] && $row[2]){
 				echo "<script>console.log('Login success');</script>";
+				setcookie($table. '_access', "granted", time()+120);
 				return true;
 			}
 		}
