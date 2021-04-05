@@ -14,6 +14,22 @@
 		global $db;
 		return $db;
 	}
+	
+	function register($login, $pass, $fname, $lname, $email, 
+						$phone, $dob, $address, $state, $apartnum, $zip)
+	{
+		echo "<script>console.log('register called!');</script>";
+		global $db;
+		$sql = "INSERT INTO `wp_clients` (user_login, user_pass, fname, lname, user_email, user_phone, user_dob, user_address, user_state, user_apartnum, user_zip) VALUES ('$login', '$pass', '$fname', '$lname', '$email', '$phone', DATE('$dob'), '$address', '$state', INT4('$apartnum'), INT4('$zip'))";
+
+		if ($db->query($sql) === TRUE) {
+			echo 'New client registered successfully';
+			return true;
+		} else {
+			echo "<script>console.log('could not register user');</script>";
+		}
+		return false;
+	}
 
 	function getLogin ($login, $password, $table)
 	{
@@ -32,9 +48,11 @@
 			if($row[1] && $row[2]){
 				echo "<script>console.log('Login success');</script>";
 				setcookie($table. '_access', "granted", time()+120);
+				#mysqli_close($db);
 				return true;
 			}
 		}
+		#mysqli_close($db);
 		return false;
 	}
 ?>
