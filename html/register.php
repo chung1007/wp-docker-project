@@ -23,7 +23,7 @@
 			<p> Date of Birth:  <input type="text" name="dob" size="15" maxlength="15" placeholder="mm/dd/yyyy" required></p>
 			<p> Street Adress:  <input type="text" name="address" size="25" maxlength="25" required></p>
 			<p> Apartment/Suite:  <input type="text" name="apartnum" size="5" maxlength="5" required></p>
-			<p> State:  <input type="text" name="state" size="2" maxlength="2" required></p>
+			<p> State:  <input type="text" name="state" size="2" maxlength="2"></p>
 			<p> Zip Code:  <input type="text" name="zip" size="6" maxlength="6" required></p>
 			<br><p><input type="submit" value="Register"></p>
 		</form>

@@ -20,9 +20,9 @@
 	{
 		global $db;
 		$sql = "INSERT INTO wp_clients (user_login, user_pass, fname, lname, user_email, user_phone, 
-											user_dob, user_address, user_state, user_apartnum, user_zip) 
-											VALUES ('$login', '$pass', '$fname', '$lname', '$email', '$phone', 
-											'$dob', '$address', '$state', '$apartnum', '$zip')";
+										user_dob, user_address, user_state, user_apartnum, user_zip, vacc_time, vacc_provider) 
+										VALUES ('$login', MD5('$pass'), '$fname', '$lname', '$email', '$phone', 
+											'$dob', '$address', '$state', '$apartnum', '$zip', '', '')";
 		if ($db->query($sql)) {
 			echo "<script>console.log('New client registered successfully');</script>";
 			closeDB();
@@ -56,11 +56,12 @@
 			if($row[1] && $row[2]){
 				echo "<script>console.log('Login success');</script>";
 				setcookie($table. '_access', "granted", time()+120);
-				$db->close();
+				closeDB();
 				return true;
 			}
 		}
-		$db->close();
+		closeDB();
+		echo "<script>console.log('Login unsuccessful');</script>";
 		return false;
 	}
 ?>

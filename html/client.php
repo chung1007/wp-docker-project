@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<h2> Sign in as Client </h2>
+		<script>console.log('client login page')</script>
 		<form method="post" action="client_login.php">
 			<label for="login">Username:</label><br> 
 			<input type="text" name="login" size="15" maxlength="15" required><br><br>
