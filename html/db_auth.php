@@ -14,6 +14,14 @@
 		global $db;
 		return $db;
 	}
+
+	function client_search($cfname, $clname, $cdob)
+	{
+		echo "<script>console.log('client first name: $cfname');</script>";
+		echo "<script>console.log('client last name: $clname');</script>";
+		echo "<script>console.log('client dob: $cdob');</script>";
+		return true;
+	}
 	
 	function register($login, $pass, $fname, $lname, $email, 
 						$phone, $dob, $address, $state, $apartnum, $zip)
