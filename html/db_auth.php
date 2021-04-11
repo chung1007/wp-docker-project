@@ -17,10 +17,17 @@
 
 	function client_search($cfname, $clname, $cdob)
 	{
-		echo "<script>console.log('client first name: $cfname');</script>";
-		echo "<script>console.log('client last name: $clname');</script>";
-		echo "<script>console.log('client dob: $cdob');</script>";
-		return true;
+		global $db;
+		$mysql = "SELECT * FROM wp_clients WHERE fname = '$cfname' AND lname = '$clname' AND user_dob = '$cdob'";
+		$result = $db->query($mysql);
+		if ($result){
+            $row = $result->fetch_array(MYSQLI_NUM);
+			setcookie("result",$row, time()+60);
+           	if ($row[1] && $row[2]){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	function register($login, $pass, $fname, $lname, $email, 

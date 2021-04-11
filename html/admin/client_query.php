@@ -2,7 +2,8 @@
 	ob_start();
 	require_once("../db_auth.php");
 	$access = client_search($_POST['cfname'], $_POST['clname'], 
-						$_POST['cdob'], "wp_admins");
+						$_POST['cdob']);
+	
 	if ($access != false)
 	{
 		session_start();
