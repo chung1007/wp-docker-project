@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	echo "<script>console.log('admin search papge');</script>";
 	if ($_COOKIE['wp_admins_access'] == "false") {
         echo '
@@ -27,16 +28,34 @@
 			window.location = 'admin.php'
 		}
 	</script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script>
+		$(function () {
+			$('form').on('submit', function (e) {
+				e.preventDefault();
+				$.ajax({
+					type: 'post',
+					url: 'client_query.php',
+					data: $('form').serialize(),
+					success: function (data) {
+						console.log(data);
+						window.alert(data);
+					}
+				});
+			});
+		});
+	</script>
     <body>
-        <center><h1> Administration Search Library </h1></center>
+        <center><h1> Administration Search </h1></center>
 		<a href="javascript:logout();">Logout</a><br><br>
-        <form method="post" action="client_query.php">
+        <form>
             <label for="cfname">Client first name:</label><br>
             <input type="text" id="cfname" name="cfname" required><br><br>
             <label for="clname">Client last name:</label><br>
             <input type="text" id="clname" name="clname" required><br><br>
             <label for="cdob">Client date of birth:</label><br>
             <input type="text" id="cdob" name="cdob" placeholder="mm/dd/yyy" required><br><br>
-            <input type="submit" value="Search">
+            <input type="submit" name="submit" value="Search">
+		</form>
     </body>
 </html>

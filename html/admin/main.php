@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	ob_start();
+	echo "<script>console.log('main.php');</script>";
 	if ($_SESSION['login'] == null)
 	{
 		header("Location: admin.php");

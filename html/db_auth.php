@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	$myUserName = 'root';
 	$myPassword = 'password';
 	$myDBName = 'wordpress';
@@ -7,7 +8,7 @@
 	if ($db->connect_error) {
 		die('Cannot connect to the database: ' . $db->connect_error);
 	}
-	echo "<script>console.log('DB Connection successful.');</script>";
+	#echo "<script>console.log('DB Connection successful.');</script>";
 
 	function getDB()
 	{
@@ -22,9 +23,8 @@
 		$result = $db->query($mysql);
 		if ($result){
             $row = $result->fetch_array(MYSQLI_NUM);
-			setcookie("result",$row, time()+60);
            	if ($row[1] && $row[2]){
-				return true;
+				return $row;
 			}
 		}
 		return false;

@@ -8,9 +8,12 @@
 	{
 		session_start();
 		$_SESSION['login'] = $access;
-		header("Location: admin_search.php");
+		#echo "RESULT: $access[11], $access[12]";
+		#header("refresh:5; url=admin_search.php");
+		$result = 'Vaccination Time: '.$access[11].', Provider: '.$access[12];
+		echo $result;
 	}
 	else {
-		header("Location: admin.php");
+		header("Location: admin_search.php");
 	}
 ?>
