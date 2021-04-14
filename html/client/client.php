@@ -14,7 +14,7 @@
 			<input type="text" name="login" size="15" maxlength="15" required><br><br>
 			<label for="password">Password:</label><br> 
 			<input type="password" name="password" size="15" required><br><br>
-			<p><input type="submit" value="Sign in"> <input type="reset"></p>
+			<p><input type="submit" value="Sign in"> <a href="register.php">Create Account</a>
 		</form>
 	</body>
 </html>

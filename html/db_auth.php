@@ -15,6 +15,27 @@
 		global $db;
 		return $db;
 	}
+	
+	function client_appointment($cfname, $clname, $ssn, $hc_provider, $hc_id)
+	{
+		global $db;
+		$datetime = "" . date("Y/m/d") . " " . date("h:i:sa");
+
+		$mysql = "UPDATE wp_clients SET user_ssn = '$ssn', user_healthcare_provider = '$hc_provider', user_healthcare_id = '$hc_id', 
+					vacc_time = '$datetime', vacc_provider = 'Dr. Raynard' WHERE fname = '$cfname' AND lname = '$clname'";
+		
+		$result = $db->query($mysql);
+		if ($result) {
+			#echo "appointment registered successfully!" . $datetime;
+			closeDB();
+			return true;
+		}else {
+			#echo "unsuccessful";
+			closeDB();
+			die(mysqli_error());
+		}
+		return false;	
+	}
 
 	function client_search($cfname, $clname, $cdob)
 	{
@@ -24,9 +45,11 @@
 		if ($result){
             $row = $result->fetch_array(MYSQLI_NUM);
            	if ($row[1] && $row[2]){
+				closeDB();
 				return $row;
 			}
 		}
+		closeDB();
 		return false;
 	}
 	
