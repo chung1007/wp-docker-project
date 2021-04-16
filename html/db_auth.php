@@ -40,17 +40,15 @@
 	function client_search($cfname, $clname, $cdob)
 	{
 		global $db;
-		$mysql = "SELECT user_phone, user_healthcare_provider, user_healthcare_id, vacc_time, vacc_provider FROM wp_clients WHERE fname = '$cfname' AND lname = '$clname' AND user_dob = '$cdob'";
+		$mysql = "SELECT fname, lname, user_phone, user_healthcare_provider, user_healthcare_id, vacc_time, vacc_provider FROM wp_clients WHERE fname = '$cfname' AND lname = '$clname' AND user_dob = '$cdob'";
 		$result = $db->query($mysql);
 		if ($result){
             $row = $result->fetch_array(MYSQLI_NUM);
-           	if ($row[0] && $row[1]){
-				closeDB();
-				return $row;
-			}
+			closeDB();
+			return $result;
 		}
 		closeDB();
-		return $row;
+		return true;
 	}
 	
 	function register($login, $pass, $fname, $lname, $email, 

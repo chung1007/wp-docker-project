@@ -13,7 +13,7 @@
 		#$result = 'Vaccination Time: '.$access[11].', Provider: '.$access[12];
 		foreach($access as $item){
 			print_r($item);
-			echo '<br/>';
+			#echo '<br/>';
 		}
 	}
 	else {
