@@ -10,8 +10,11 @@
 		$_SESSION['login'] = $access;
 		#echo "RESULT: $access[11], $access[12]";
 		#header("refresh:5; url=admin_search.php");
-		$result = 'Vaccination Time: '.$access[11].', Provider: '.$access[12];
-		echo $result;
+		#$result = 'Vaccination Time: '.$access[11].', Provider: '.$access[12];
+		foreach($access as $item){
+			print_r($item);
+			echo '<br/>';
+		}
 	}
 	else {
 		header("Location: admin_search.php");
