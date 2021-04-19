@@ -15,9 +15,9 @@
 		<script> console.log('this is admin page') </script>
 		<form method="post" action="admin_login.php" autocomplete="off" id="login">
 			<label for="login">Username:</label><br> 
-			<input type="text" name="login" size="15" maxlength="15" required><br><br>
+			<input type="text" name="login" size="15" maxlength="15" required autocomplete="off"><br><br>
 			<label for="password">Password:</label><br> 
-			<input type="password" name="password" size="15" required><br><br>
+			<input type="password" name="password" size="15" required autocomplete="new-password"><br><br>
 			<p><input type="submit" value="Sign in"> <input type="reset"></p>
 		</form>
 		<script>document.getElementById("login").reset();</script>

@@ -50,11 +50,11 @@
 		<a href="javascript:logout();">Logout</a><br><br>
         <form>
             <label for="cfname">Client first name:</label><br>
-            <input type="text" id="cfname" name="cfname" required><br><br>
+            <input type="text" id="cfname" name="cfname" required autocomplete="off"><br><br>
             <label for="clname">Client last name:</label><br>
-            <input type="text" id="clname" name="clname" required><br><br>
+            <input type="text" id="clname" name="clname" required autocomplete="off"><br><br>
             <label for="cdob">Client date of birth:</label><br>
-            <input type="text" id="cdob" name="cdob" placeholder="mm/dd/yyy" required><br><br>
+            <input type="text" id="cdob" name="cdob" placeholder="mm/dd/yyy" required autocomplete="off"><br><br>
             <input type="submit" name="submit" value="Search">
 		</form>
     </body>

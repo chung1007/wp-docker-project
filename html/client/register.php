@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h2> Client Registration </h2><br>
-		<form method="post" action="client_register.php">
+		<form method="post" action="client_register.php" autocomplete="off">
 			<h3> Login Information </h3>
 			<hr><br>
 			<p>Username:  <input type="text" name="login" size="15" maxlength="15"></p>
@@ -22,7 +22,7 @@
 			<p> Phone Number:  <input type="text" name="phone" size="15" maxlength="15" required></p>
 			<p> Date of Birth:  <input type="text" name="dob" size="15" maxlength="15" placeholder="mm/dd/yyyy" required></p>
 			<p> Street Adress:  <input type="text" name="address" size="25" maxlength="25" required></p>
-			<p> Apartment/Suite:  <input type="text" name="apartnum" size="5" maxlength="5" required></p>
+			<p> Apartment/Suite:  <input type="text" name="apartnum" size="5" maxlength="5"></p>
 			<p> State:  <input type="text" name="state" size="2" maxlength="2"></p>
 			<p> Zip Code:  <input type="text" name="zip" size="6" maxlength="6" required></p>
 			<br><p><input type="submit" value="Register"></p>
