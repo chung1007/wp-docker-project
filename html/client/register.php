@@ -7,7 +7,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/global.6.css" /> -->
 	</head>
 	<body>
-		<h2> Client Registration </h2><br>
+		<h2> Client Registration</h2><br>
 		<form method="post" action="client_register.php" autocomplete="off">
 			<h3> Login Information </h3>
 			<hr><br>
