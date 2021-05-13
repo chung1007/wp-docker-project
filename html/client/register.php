@@ -3,30 +3,33 @@
 <html>
 	<head>
 		<title>Register</title>
-		<link rel="stylesheet" type="text/css" href="../css/template.css"/>
+		<link rel="stylesheet" type="text/css" href="client_template.css"/>
 		<!-- <link rel="stylesheet" type="text/css" href="css/global.6.css" /> -->
 	</head>
 	<body>
-		<h2> Client Registration</h2><br>
-		<form method="post" action="client_register.php" autocomplete="off">
-			<h3> Login Information </h3>
-			<hr><br>
-			<p>Username:  <input type="text" name="login" size="15" maxlength="15"></p>
-			<p>Password:  <input type="password" name="pass" size="15"></p><br>
+		<br>
+		<h2 class="reg-header"> Register</h2><br>
+		<div class="reg_container">
+			<form method="post" action="client_register.php" autocomplete="off">
+				<!-- <h3> Login Information </h3>
+				<hr><br> -->
+				<p><strong>Username:&emsp;</strong><input type="text" name="login" size="15" maxlength="15" placeholder="Choose your username"></p>
+				<p><strong>Password:&emsp;</strong><input type="password" name="pass" size="15" placeholder="Choose your password"></p><br>
 
-			<h3> Client Information </h3>
-			<hr><br>
-			<p> First Name:  <input type="text" name="fname" size="20" maxlength="15" required></p>
-			<p> Last Name:  <input type="text" name="lname" size="20" maxlength="15" required></p>
-			<p> Email Adress:  <input type="text" name="email" size="25" maxlength="25" required></p>
-			<p> Phone Number:  <input type="text" name="phone" size="15" maxlength="15" required></p>
-			<p> Date of Birth:  <input type="text" name="dob" size="15" maxlength="15" placeholder="mm/dd/yyyy" required></p>
-			<p> Street Adress:  <input type="text" name="address" size="25" maxlength="25" required></p>
-			<p> Apartment/Suite:  <input type="text" name="apartnum" size="5" maxlength="5"></p>
-			<p> State:  <input type="text" name="state" size="2" maxlength="2"></p>
-			<p> Zip Code:  <input type="text" name="zip" size="6" maxlength="6" required></p>
-			<br><p><input type="submit" value="Register"></p>
-		</form>
+				<!--<h3> Client Information </h3>
+				<hr><br>-->
+				<p><strong>First Name:&emsp;</strong><input type="text" name="fname" size="20" maxlength="15" placeholder="Enter your first name" required></p>
+				<p><strong>Last Name:&emsp;</strong><input type="text" name="lname" size="20" maxlength="15" placeholder="Enter your last name" required></p>
+				<p><strong>Email Adress:&emsp;</strong><input type="text" name="email" size="25" maxlength="25" placeholder="Enter your email" required></p>
+				<p><strong>Phone Number:&emsp;</strong><input type="text" name="phone" size="15" maxlength="15" placeholder="Enter your phone number" required></p>
+				<p><strong>Date of Birth:&emsp;</strong><input type="text" name="dob" size="15" maxlength="15" placeholder="mm/dd/yyyy" required></p>
+				<p><strong>Street Adress:&emsp;</strong><input type="text" name="address" size="25" maxlength="25" placeholder="Enter your address" required></p>
+				<p><strong>Apartment/Suite:&emsp;</strong><input type="text" name="apartnum" size="5" maxlength="5"></p>
+				<p><strong>State:&emsp;</strong><input type="text" name="state" size="2" maxlength="2"></p>
+				<p><strong>Zip Code:&emsp;</strong><input type="text" name="zip" size="6" maxlength="6" required></p>
+				<br><p><input type="submit" value="Register"></p>
+			</form>
+		</div>
 	</body>
 </html>
 

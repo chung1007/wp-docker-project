@@ -7,7 +7,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="css/global.6.css" /> -->
 	</head>
 	<body class="login_body">
-		<div class="login_container">
+		<div class="container">
 			<h2> Client sign in </h2>
 			<script>console.log('client login page')</script>
 			<form method="post" action="client_login.php" autocomplete="off">
