@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    ob_start(); 
+    echo "<script>console.log('reset cookie');</script>";
+    setcookie("wp_clients_access", "false", time() + (86400*30), '/');
+?>
 
 <html>
 	<head>

@@ -1,25 +1,29 @@
 .container{
-	position: fixed;
-	top: 25%;
-	left: 38%;
-	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 	background-color: #f7f7f7;
-	height: 350px;
+	height: 300px;
 	width: 350px;
 	padding-left: 50px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 0px;
 	border-radius: 10px;
 }
 .reg_container{
-	position: fixed;
-	top: 15%;
-	left: 38%;
-	margin:auto;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 	background-color: #ffffff;
-	height: 700px;
+	height: 550px;
 	width: 500px;
 	padding-left: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 0px;
+	padding-top: 10px;
 	border-radius: 10px;
 }
 
@@ -35,6 +39,10 @@ h2.reg-header {
 }
 
 p {
+	font-family: "Optima", sans-serif;
+}
+
+label{
 	font-family: "Optima", sans-serif;
 }
 

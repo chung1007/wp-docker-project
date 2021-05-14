@@ -1,7 +1,7 @@
 <?php
 	ob_start();
 	echo "<script>console.log('admin search papge');</script>";
-	if ($_COOKIE['wp_admins_access'] == "false") {
+	if (!$_COOKIE['wp_admins_access'] || $_COOKIE['wp_admins_access'] == "false") {
         echo '
 <html>
 <head><title>404 Not Found</title></head>
